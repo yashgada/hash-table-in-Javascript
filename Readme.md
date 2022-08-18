@@ -18,7 +18,22 @@
    to store collisions of hash values. 1st dimension for hash value, second
    dimension for the different values at the hash, 3rd dimension to store the
    actual key and value pair.
-8.
+8. For any value being set, first check if a Value exists for its hash key,
+   assign the key value pair in a 2D array if not, or push it on the existing
+   array
+9. for getting the value, get the hash value of the key, loop through the array
+   in the hash table at the hash key where key matches desired one and return it
+
+- Now we deal with increasing the size of the hashmap dynamically
+
+10. Set a counter for every addition of item to the hash
+11. Set a condition, if the load increases a certain limit, the size of the hash
+    map is increased. Doubled simply if needed. load of 0.8 is common as per Ben
+    Awad
+12. For when the condition is hit, setup a resize function. In it, make the new
+    map, loop through the existing map, all nodes, and rehash and reprocess and
+    build the entire map again and populate it.
+13. Perform tests
 
 _Hashing function_ One way of doing the hashing function is:
 
